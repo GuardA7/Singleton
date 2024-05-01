@@ -1,19 +1,14 @@
 <?php
 class DatabaseConnection {
-    private static ?PDO $connection = null;
+    private static ?PDO $instance = null;
 
     private function __construct() {}
 
     public static function getInstance(): PDO {
-        if(!self::$connection) {
-            try {
-                self::$connection = new PDO('mysql:host=localhost;dbname=clubbola', 'root', '');
-                self::$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            } catch(PDOException $e) {
-                echo "Connection failed: " . $e->getMessage();
-            }
+        if (!self::$instance) {
+            self::$instance = new PDO('mysql:host=localhost;dbname=clubbola;charset=utf8mb4', 'root', '');
         }
-        return self::$connection;
+        return self::$instance;
     }
 }
 ?>
