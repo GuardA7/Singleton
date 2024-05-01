@@ -1,7 +1,7 @@
 <?php
 include_once 'ClubInsert.php';
 
-// Membuat objek dari kelas ClubInsert menggunakan getInstance()
+
 $insert = ClubInsert::getInstance();
 $insert->insertClub('Liverpool', 'Premier League', 1, 6);
 var_dump($insert);

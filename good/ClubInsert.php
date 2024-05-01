@@ -29,7 +29,6 @@ class ClubInsert {
         }
     }
 
-    // Fungsi __clone() dideklarasikan private untuk mencegah duplikasi objek ClubInsert
     private function __clone() {}
 }
 ?>
